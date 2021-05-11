@@ -4,10 +4,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class CoinratesApplication {
+public class CoinRatesApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(CoinratesApplication.class, args);
+        SpringApplication.run(CoinRatesApplication.class, args);
     }
-
 }
