@@ -22,7 +22,6 @@ import static org.mockito.Mockito.when;
 @RunWith(MockitoJUnitRunner.class)
 public class HistoricalPriceServiceTest {
     private static final String VALID_CURRENCY = "EUR";
-    private static final String INVALID_CURRENCY = "Invalid currency";
     private static final String ERROR_MESSAGE = "Something went wrong";
 
     @InjectMocks
@@ -87,5 +86,4 @@ public class HistoricalPriceServiceTest {
         String actual = historicalPriceService.getMaxHistoricalPrice(VALID_CURRENCY);
         assertEquals(ERROR_MESSAGE, actual);
     }
-
 }

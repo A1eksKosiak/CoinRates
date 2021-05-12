@@ -7,6 +7,14 @@ public class SupportedCurrencyDTO {
     private String currency;
     private String country;
 
+    public SupportedCurrencyDTO() {
+    }
+
+    public SupportedCurrencyDTO(String currency, String country) {
+        this.currency = currency;
+        this.country = country;
+    }
+
     public String getCurrency() {
         return currency;
     }
