@@ -28,7 +28,6 @@ public class JsonUtil {
     private static final String EUROPE_TALLINN = "Europe/Tallinn";
     private static final String DATE_FORMAT = "yyyy-MM-dd";
 
-    //todo check possibility to have a unique private method
     public List<SupportedCurrencyDTO> getSupportedCurrencies() throws IOException {
         ObjectMapper objectMapper = new ObjectMapper();
         return objectMapper.readValue(new URL(SUPPORTED_CURRENCIES_URL), new TypeReference<List<SupportedCurrencyDTO>>() {

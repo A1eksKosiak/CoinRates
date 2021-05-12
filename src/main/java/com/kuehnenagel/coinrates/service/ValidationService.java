@@ -11,7 +11,7 @@ import java.io.IOException;
 @Service
 public class ValidationService {
     private static final String ERROR_MESSAGE_FOR_NULL = "Input should not be null";
-    private static final String ERROR_MESSAGE_UNSUPPORTED_CURRENCY = "The provided currency is not supported by the CoinDesk API";
+    private static final String ERROR_MESSAGE_UNSUPPORTED_CURRENCY = "The provided currency is not supported";
 
     private static final Logger log = LoggerFactory.getLogger(ValidationService.class);
 
@@ -31,7 +31,6 @@ public class ValidationService {
             }
         } catch (IOException e) {
             log.error(e.getMessage(), e);
-            //todo check if we need to return a message to the user
         }
     }
 
