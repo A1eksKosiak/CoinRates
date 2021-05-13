@@ -3,7 +3,7 @@
     <Appenders>
         <Console name="Console" target="SYSTEM_OUT">
             <PatternLayout
-                    pattern="%style{%d{ISO8601}}{black} %highlight{%-5level }[%style{%t}{bright,blue}] %style{%C{1.}}{bright,yellow}: %msg%n%throwable" />
+                    pattern="%msg%n%throwable" />
         </Console>
 
         <RollingFile name="RollingFile"
@@ -22,12 +22,12 @@
     </Appenders>
 
     <Loggers>
-        <Root level="info">
+        <Root level="warn">
             <AppenderRef ref="Console" />
             <AppenderRef ref="RollingFile" />
         </Root>
 
-        <Logger name="com.kuehnenagel" level="trace"></Logger>
+        <Logger name="com.kuehnenagel.coinrates.utils.IOCommandLine" level="info"></Logger>
     </Loggers>
 
 </Configuration>

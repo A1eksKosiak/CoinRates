@@ -17,13 +17,11 @@ public class ValidationService {
     JsonUtil jsonUtil;
 
     public void validate(String currency) throws IllegalArgumentException {
-        log.info("Validating currency");
+        log.debug("Validating currency");
         if (currency == null) {
-            log.warn(ERROR_MESSAGE_FOR_NULL);
             throw new IllegalArgumentException(ERROR_MESSAGE_FOR_NULL);
         }
         if (!isSupportedCurrency(currency)) {
-            log.warn(ERROR_MESSAGE_UNSUPPORTED_CURRENCY);
             throw new IllegalArgumentException(ERROR_MESSAGE_UNSUPPORTED_CURRENCY);
         }
 

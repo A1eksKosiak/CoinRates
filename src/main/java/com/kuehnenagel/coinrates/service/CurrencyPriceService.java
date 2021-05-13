@@ -19,10 +19,10 @@ public class CurrencyPriceService {
     JsonUtil jsonUtil;
 
     public String getCurrentPrice(String currency) {
-        log.info("Retrieving current price");
+        log.debug("Retrieving current price");
         Optional<CurrencyDTO> currentPrice = jsonUtil.getCurrentPrice(currency);
         if (currentPrice.isPresent()) {
-            log.info("Current price found");
+            log.debug("Current price found");
             return Double.toString(currentPrice.get().getRateFloat());
         }
         return ERROR_MESSAGE;

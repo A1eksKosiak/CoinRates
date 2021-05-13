@@ -21,7 +21,7 @@ public class HistoricalPriceService {
 
     public String getMinHistoricalPrice(String currency) {
         checkHistoricalPrice(currency);
-        log.info("Retrieving min price from the historical price");
+        log.debug("Retrieving min price from the historical price");
         Optional<Map.Entry<String, Double>> minEntry = historicalPriceDTO.getBpi().getDailyRates()
                 .entrySet()
                 .stream()
@@ -34,7 +34,7 @@ public class HistoricalPriceService {
 
     public String getMaxHistoricalPrice(String currency) {
         checkHistoricalPrice(currency);
-        log.info("Retrieving max price from the historical price");
+        log.debug("Retrieving max price from the historical price");
         Optional<Map.Entry<String, Double>> maxEntry = historicalPriceDTO.getBpi().getDailyRates()
                 .entrySet()
                 .stream()
@@ -47,10 +47,10 @@ public class HistoricalPriceService {
 
     private void checkHistoricalPrice(String currency) {
         if (historicalPriceDTO != null) {
-            log.info("Historical price already retrieved");
+            log.debug("Historical price already retrieved");
             return;
         }
-        log.info("Retrieving the historical price");
+        log.debug("Retrieving the historical price");
         historicalPriceDTO = jsonUtil.getHistoricalPrice(currency);
     }
 }

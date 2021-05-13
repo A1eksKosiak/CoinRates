@@ -35,7 +35,7 @@ public class RunnerService {
     @Bean
     public CommandLineRunner run() {
         return args -> {
-            log.info("Application started");
+            log.debug("Application started");
             ioCommandLine.writeOutput(WELCOME_MESSAGE);
             ioCommandLine.writeOutput(CURRENCY_SELECT_MESSAGE);
             String input = ioCommandLine.readInput().toUpperCase();
@@ -47,12 +47,11 @@ public class RunnerService {
                     ioCommandLine.writeOutput(MAX_RATE_MESSAGE + historicalPriceService.getMaxHistoricalPrice(input));
                 } catch (IllegalArgumentException e) {
                     log.warn(e.getMessage());
-                    ioCommandLine.writeOutput(e.getMessage());
                 }
                 ioCommandLine.writeOutput(EXIT_OR_CURRENCY_SELECT_MESSAGE);
                 input = ioCommandLine.readInput().toUpperCase();
             }
-            log.info("Application ended");
+            log.debug("Application ended");
         };
     }
 }
