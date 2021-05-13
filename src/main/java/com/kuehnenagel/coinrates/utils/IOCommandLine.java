@@ -9,10 +9,7 @@ public class IOCommandLine {
 
     public String readInput() {
         Scanner sc = new Scanner(System.in);
-        String input = sc.nextLine();
-        //TODO
-//        sc.close();
-        return input;
+        return sc.nextLine();
     }
 
     public void writeOutput(String output) {

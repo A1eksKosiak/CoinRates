@@ -6,8 +6,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.io.IOException;
-
 @Service
 public class ValidationService {
     private static final String ERROR_MESSAGE_FOR_NULL = "Input should not be null";
@@ -24,17 +22,14 @@ public class ValidationService {
             log.warn(ERROR_MESSAGE_FOR_NULL);
             throw new IllegalArgumentException(ERROR_MESSAGE_FOR_NULL);
         }
-        try {
-            if (!isSupportedCurrency(currency)) {
-                log.warn(ERROR_MESSAGE_UNSUPPORTED_CURRENCY);
-                throw new IllegalArgumentException(ERROR_MESSAGE_UNSUPPORTED_CURRENCY);
-            }
-        } catch (IOException e) {
-            log.error(e.getMessage(), e);
+        if (!isSupportedCurrency(currency)) {
+            log.warn(ERROR_MESSAGE_UNSUPPORTED_CURRENCY);
+            throw new IllegalArgumentException(ERROR_MESSAGE_UNSUPPORTED_CURRENCY);
         }
+
     }
 
-    private boolean isSupportedCurrency(String currency) throws IOException {
+    private boolean isSupportedCurrency(String currency) {
         log.info("Checking if currency is supported");
         return jsonUtil.getSupportedCurrencies().stream()
                 .anyMatch(c -> c.getCurrency().equals(currency.toUpperCase()));
