@@ -68,6 +68,7 @@
                 </executions>
             </plugin>
         </plugins>
+        <finalName>coinrates</finalName>
     </build>
 
 </project>
