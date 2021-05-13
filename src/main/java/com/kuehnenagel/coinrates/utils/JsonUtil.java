@@ -76,5 +76,4 @@ public class JsonUtil {
         }
         return historicalPriceDTO;
     }
-
 }
