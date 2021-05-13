@@ -55,5 +55,4 @@ public class RunnerService {
             log.info("Application ended");
         };
     }
-
 }

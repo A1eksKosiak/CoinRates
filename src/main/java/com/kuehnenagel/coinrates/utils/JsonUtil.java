@@ -6,7 +6,6 @@ import com.kuehnenagel.coinrates.dto.CurrencyDTO;
 import com.kuehnenagel.coinrates.dto.CurrentPriceDTO;
 import com.kuehnenagel.coinrates.dto.HistoricalPriceDTO;
 import com.kuehnenagel.coinrates.dto.SupportedCurrencyDTO;
-import com.kuehnenagel.coinrates.service.ValidationService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
@@ -32,7 +31,7 @@ public class JsonUtil {
     private static final String EUROPE_TALLINN = "Europe/Tallinn";
     private static final String DATE_FORMAT = "yyyy-MM-dd";
 
-    private static final Logger log = LoggerFactory.getLogger(ValidationService.class);
+    private static final Logger log = LoggerFactory.getLogger(JsonUtil.class);
 
     public List<SupportedCurrencyDTO> getSupportedCurrencies() {
         ObjectMapper objectMapper = new ObjectMapper();
